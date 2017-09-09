@@ -11,6 +11,21 @@
     <link rel="stylesheet" href="css/suche.css" />
     <meta charset="utf-8">
     <link rel="icon" href="img/logo.png" type="image/png" class="img-thumbnail">
+    <script>
+        function loaduser() {
+
+            var name = $('#searchtext')[0].value;
+            var url = "http://10.172.3.201:9253/user?name=" + name
+            console.log(url)
+
+            $.ajax({
+                url: url
+            })
+                .done(function (data) {
+                    console.log("Sample of data:", data);
+                });
+        };
+    </script>
 </head>
 
 <body style="background-image: url(img/background.jpg)">
@@ -25,23 +40,19 @@
             <div class="col-md-1"></div>
             <div class="col-md-10 middle" style="padding-bottom: 1em;">
                 <div class="row" style="background-color: #999999;">
-                    <form class="navbar-form navbar-left " id="suchen" action="search.html">
-                        <select class="form-control">
-                            <option>JH 2016</option>
-                            <option>JH 2017</option>
-                            <option>JH 2018</option>
-                        </select>
+                    <form class="navbar-form navbar-left " id="suchen" onsubmit="loaduser();return false;">
                         <input type="radio" name="sort" class="search-search" />
                         <label>Skills</label>
                         <input type="radio" name="sort" class="search-search" />
                         <label>Name</label>
-                        <input type="text" class="form-control search search-search" />
+                        <input type="text" id="searchtext" class="form-control search search-search" />
                         <input type="submit" class="btn btn-primary search" value="Suchen" />
-						<button type="button" class="btn btn-default" onclick="window.location.href='./index.html'">Zurück zur Startseite</button>
                     </form>
+                    <button type="button" class="btn btn-default" onclick="window.location.href='./index.html'">Zurück zur Startseite</button>
                 </div>
                 <h1>Suchergebnisse:</h1>
-                <div class="Eintrag"><img src="img/standartavatar.png" style="float: right; height: 3.5em;"><b style="color: red;">Alpaka von Cologne</b><br>Skills: alles </div>
+                <div class="Eintrag"><img src="img/standartavatar.png" style="float: right; height: 3.5em; margin-bottom: 5px;"><b style="color: red;">Alpaka von Cologne</b><br>Skills: alles </div>
+                <div class="Eintrag"><img src="img/standartavatar.png" style="float: right; height: 3.5em; margin-bottom: 5px;"><b style="color: red;">Alpaka von Cologne</b><br>Skills: alles </div>
             </div>
         </div>
     </div>
