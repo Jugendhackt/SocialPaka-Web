@@ -1,20 +1,19 @@
-html,body{
+html,
+body {
+    font-family: fantasy;
     font-size: 15px;
     height: 100%;
 }
-.form-group {
-    width: 25%;
-}
 .banner {
-    background-color: green;
-    height: 100%;
-    padding-top: 12.5em;
+    background-image: url(banner.png);
+    background-repeat: no-repeat;
+    height: 30%;
+    padding-top: 1em;
     padding-left: 12.5em;
 }
 .suche {
-    background-color: #00a5dc;
-    margin-top: 5em;
-    padding: 5em;
+    background-image: #00a5dc;
+    padding: 5em 40%;
 }
 header {
     position: fixed;
@@ -33,6 +32,21 @@ h3 {
     font-size: 2em;
 }
 .buttonscroll {
-	position: fixed;
-	bottom: 1em;
+    position: fixed;
+    bottom: 1em;
+}
+.search {
+    display: inline-block;
+    width: 10em;
+}
+.startsuche {
+    text-align: center;
+    width: 15em;
+}
+.search-search {
+    margin-left: 1em !important;
+}
+.ueberschrift {
+    font-style: italic;
+    font-family: serif;
 }
