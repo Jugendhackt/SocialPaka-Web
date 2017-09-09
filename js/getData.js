@@ -1,0 +1,2 @@
+var input = document.cookie;
+
