@@ -53,3 +53,7 @@ h3 {
 #suchen{
     margin-left: 5em;
 }
+.article {
+    height: 50%;
+    background-color: #00a5dc;
+}
