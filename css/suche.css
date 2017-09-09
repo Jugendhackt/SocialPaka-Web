@@ -5,7 +5,7 @@ body {
     height: 100%;
 }
 .banner {
-    background-image: url(banner.png);
+    background-image: url(../img/banner.png);
     background-repeat: no-repeat;
     height: 30%;
     padding-top: 1em;
@@ -49,4 +49,7 @@ h3 {
 .ueberschrift {
     font-style: italic;
     font-family: serif;
+}
+#suchen{
+    margin-left: 5em;
 }
