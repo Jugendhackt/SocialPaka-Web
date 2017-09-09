@@ -1,5 +1,16 @@
+* {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1em;
+}
+
 .infocontent{
     margin-bottom: 10px;
-    padding: 10px;
-    border: 3px solid;
+}
+
+h1{
+    font-weight: 700;
+}
+
+ul{
+    list-style-type: None;
 }
