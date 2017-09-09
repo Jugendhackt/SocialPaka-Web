@@ -1,0 +1,20 @@
+html,body{
+    height: 100%;
+}
+.form-group {
+    width: 25%;
+}
+.banner {
+    background-color: green;
+    height: 100%;
+    padding-top: 12.5em;
+    padding-left: 12.5em;
+}
+.suche {
+    background-color: #00a5dc;
+    margin-top: 5em;
+    padding: 5em;
+}
+header {
+    text-align: right;
+}
