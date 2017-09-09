@@ -59,13 +59,16 @@ h3 {
 }
 .Bildl {
     float: left;
+    width: auto;
     height: 50%;
 }
 .Bildr {
     float: right;
+    width: auto;
     height: 50%;
 }
 .Download {
+    margin-left: inherit;
     margin-top: 5em;
     text-align: center;
 }
