@@ -22,7 +22,8 @@
                 url: url
             })
                 .done(function (data) {
-                    console.log("Sample of data:", data);
+                    var newdiv = '<div class="Eintrag"><img src="img/standartavatar.png" style="float: right; height: 3.5em; margin-bottom: 5px;"><b style="color: red;">' + data.fullName + '</b><br>Skills: alles </div>'
+                    $(newdiv).appendTo('#add');
                 });
         };
     </script>
@@ -51,8 +52,8 @@
                     <button type="button" class="btn btn-default" onclick="window.location.href='./index.html'">Zurück zur Startseite</button>
                 </div>
                 <h1>Suchergebnisse:</h1>
-                <div class="Eintrag"><img src="img/standartavatar.png" style="float: right; height: 3.5em; margin-bottom: 5px;"><b style="color: red;">Alpaka von Cologne</b><br>Skills: alles </div>
-                <div class="Eintrag"><img src="img/standartavatar.png" style="float: right; height: 3.5em; margin-bottom: 5px;"><b style="color: red;">Alpaka von Cologne</b><br>Skills: alles </div>
+                <div id="add" style="margin:0;padding:0;">
+                </div>
             </div>
         </div>
     </div>
