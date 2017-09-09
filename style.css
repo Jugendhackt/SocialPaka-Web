@@ -1,4 +1,5 @@
 html,body{
+    font-size: 15px;
     height: 100%;
 }
 .form-group {
@@ -16,5 +17,22 @@ html,body{
     padding: 5em;
 }
 header {
+    position: fixed;
     text-align: right;
+    width: 100%;
+}
+.header-bild {
+    float: left;
+    height: 3em;
+    margin: 0;
+}
+h3 {
+    font-size: 20px;
+}
+.scroll {
+    font-size: 2em;
+}
+.buttonscroll {
+	position: fixed;
+	bottom: 1em;
 }
