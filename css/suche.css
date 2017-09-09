@@ -57,3 +57,11 @@ h3 {
     height: 50%;
     background-color: #00a5dc;
 }
+.Bildl {
+    float: left;
+    height: 50%;
+}
+.Bildr {
+    float: right;
+    height: 50%;
+}
