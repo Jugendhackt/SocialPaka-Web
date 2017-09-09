@@ -1,68 +1,44 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Social Paka-Downloads</title>
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet" />
-    <link rel="stylesheet" href="css/basic.css">
-    <link rel="stylesheet" href="css/suche.css">
-    <link rel="icon" href="img/logo.png" type="image/png" class="img-thumbnail">
+	<meta charset="utf-8">
+	<title>Social Paka-Downloads</title>
+	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet" />
+	<link rel="stylesheet" href="css/basic.css">
+	<link rel="stylesheet" href="css/suche.css">
+	<link rel="icon" href="img/logo.png" type="image/png" class="img-thumbnail">
 </head>
 
 <body style="background-image: url(img/background.jpg)">
-    <div class="middle">
-        <header>
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-                            aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                        <img src="img/logo.png" class="header-bild">
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html">Startseite</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <br>
-        <br>
-        <img src="img/banner.png" style="width: 100%;" />
-        <div class="Download">
-            <h1>Downloads</h1>
-            <button type="button" class="btn btn-info">Download für Android</button>
-            <button type="button" class="btn btn-info">Download für IOS</button>
-        </div>
-        <div class="Download">
-            <h1>Erste Schritte</h1>
-            <h2>Android
+	<img src="img/banner.png" style="width: 100%;" />
+	<button type="button" class="btn btn-default" onclick="window.location.href='./index.html'">Zurück zur Startseite</button>
+	<div class="Download middle">
+		<h1>Downloads</h1>
+		<button type="button" class="btn btn-info">Download für Android</button>
+		<button type="button" class="btn btn-info">Download für IOS</button>
+	</div>
+	<div class="Download middle">
+		<h1>Erste Schritte</h1>
+		<h2>Android
                 <a onclick="text1.style.display='inline-block';an.style.display='none';zu.style.display='inline-block'" id="an" style="display: inline-block"
                     href="#neu"><span class="glyphicon glyphicon-arrow-down"></span></a>
                 <a onclick="text1.style.display='none';an.style.display='inline-block';zu.style.display='none'" id="zu" style="display: none"
                     href="#neu"><span class="glyphicon glyphicon-arrow-up"></span></a>
                 <a name="neu"></a></h2>
-            <div id="text1" style="display: none">Der Text für Android</div>
-            <h2>IOS
+		<div id="text1" style="display: none">Der Text für Android</div>
+		<h2>IOS
                 <a onclick="text2.style.display='inline-block';an2.style.display='none';zu2.style.display='inline-block'" id="an2" style="display: inline-block"
                     href="#neu"><span class="glyphicon glyphicon-arrow-down"></span></a>
                 <a onclick="text2.style.display='none';an2.style.display='inline-block';zu2.style.display='none'" id="zu2" style="display: none"
                     href="#neu2"><span class="glyphicon glyphicon-arrow-up"></span></a>
                 <a name="neu2"></a></h2>
-            <div id="text2" style="display: none">Der Text für IOS</div>
-            <p></p>
-            <br>
-        </div>
-    </div>
+		<div id="text2" style="display: none">Der Text für IOS</div>
+		<p></p>
+		<br>
+	</div>
 </body>
 
 </html>
