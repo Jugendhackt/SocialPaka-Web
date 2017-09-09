@@ -66,6 +66,10 @@ h3 {
     height: 50%;
 }
 .Download {
-    margin-top: 10em;
+    margin-top: 5em;
     text-align: center;
+}
+
+#android{
+    display: none;
 }
