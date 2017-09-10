@@ -2,14 +2,13 @@
 <html>
 
 <head>
-    <title>Social Paka-Suche</title>
+    <meta charset="utf-8">
+    <title>Social Paka - Suche</title>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/basic.css" />
-    <link rel="stylesheet" href="css/suche.css" />
-    <meta charset="utf-8">
     <link rel="icon" href="img/logo.png" type="image/png" class="img-thumbnail">
     <script>
         function loaduser() {
@@ -31,29 +30,33 @@
 
 <body style="background-image: url(img/background.jpg)">
     <div class="container" style="width: 100%;">
-        <div class="row" id="banner">
+        <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10" style="height: 100%; padding: 0;">
                 <img src="img/banner.png" style="width: 100%;" />
             </div>
         </div>
-        <div class="row" id="options">
+        <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-10 middle" style="padding-bottom: 1em;">
-                <div class="row" style="background-color: #999999;">
-                    <form class="navbar-form navbar-left " id="suchen" onsubmit="loaduser();return false;">
-                        <input type="radio" name="sort" class="search-search" />
-                        <label>Skills</label>
+            <div class="col-md-10" style="height: 100%; background-color: #999999;">
+                <div class="col-md-8">
+                    <form class="navbar-form" id="suchen" onsubmit="loaduser();return false;">
                         <input type="radio" name="sort" class="search-search" />
                         <label>Name</label>
+                        <input type="radio" name="sort" class="search-search" />
+                        <label>Skills</label>
                         <input type="text" id="searchtext" class="form-control search search-search" />
                         <input type="submit" class="btn btn-primary search" value="Suchen" />
                     </form>
-                    <button type="button" class="btn btn-default" onclick="window.location.href='./index.html'">Zurück zur Startseite</button>
                 </div>
-                <h1>Suchergebnisse:</h1>
-                <div id="add" style="margin:0;padding:0;">
-                </div>
+                <a href="index.html"><button type="button" class="btn btn-default">Zurück zur Startseite</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 middle">
+                <h1>Suchergebnisse</h1>
+                <div id="add" style="margin: 0; padding: 0;"></div>
             </div>
         </div>
     </div>

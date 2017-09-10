@@ -3,9 +3,9 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Social Paka-Downloads</title>
+	<title>Social Paka - Downloads</title>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet" />
 	<link rel="stylesheet" href="css/basic.css">
@@ -24,11 +24,23 @@
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-10 middle" style="height: 100%; padding: 0;">
-					<button type="button" class="btn btn-default" onclick="window.location.href='./index.html'">Zurück zur Startseite</button>
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+
 					<div class="Download">
 						<h1>Downloads</h1>
 						<button type="button" class="btn btn-info">Download für Android</button>
 						<button type="button" class="btn btn-info">Download für IOS</button>
+					</div>
+					<div class="Download">
+						<h1>Sourcecode</h1>
+
+						<a href="https://github.com/Jugendhackt/SocialPaka" target="_blank">
+							<button type="button" class="btn btn-danger">Android auf GitHub</button>
+						</a>
+						<a href="https://github.com/Jugendhackt/SocialPaka-iOS" target="_blank">
+							<button type="button" class="btn btn-danger">iOS auf GitHub</button>
+						</a>
 					</div>
 					<div class="Download">
 						<h2>Wozu die App gut ist
@@ -44,10 +56,15 @@
 							<a onclick="text2.style.display='none';an2.style.display='inline-block';zu2.style.display='none'" id="zu2" style="display: none"
 							 href="#neu2"><span class="glyphicon glyphicon-arrow-up"></span></a>
 							<a name="neu2"></a></h2>
-						<div id="text2" style="display: none">Der Text für IOS</div>
+						<div id="text2" style="display: none">
+							Text für iOS
+						</div>
+					</div>
+				</div>
+				<a href="index.html">
+					<button type="button" class="btn btn-default">Zurück zur Startseite</button>
+				</a>
 			</div>
-		</div>
-		
 		</div>
 	</div>
 </body>

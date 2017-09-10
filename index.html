@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/basic.css" />
-    <link rel="icon" href="logo.png" type="image/png" class="img-thumbnail" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png">
 </head>
 
 <body style="background-image: url(img/background.jpg)">
@@ -26,18 +26,21 @@
                 <div class="col-md-4">
                     <form class="form-group" action="search.html">
                         <h2>Suche Person</h2>
-                        <input type="radio" name="sort"/><label>Name</label>
-                        <input type="radio" name="sort" width="100%"/><label>Skills</label>
+                        <input type="radio" name="sort" value="name"/><label>Name</label>
+                        <input type="radio" name="sort" value="skills"/><label>Skills</label>
                         <br />
-                        <input type="text" class="form-control">
+                        <input id="searchtext" type="text" name="a" class="form-control">
                         <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Suchen</button>
                     </form>
-					
-			<button type="button" class="btn btn-info" onclick="window.location.href='./Download.html'" style="margin: 10px;">Zur Downloadseite</button>
-                </div>
+                </div><a href="Download.html"><button type="button" class="btn btn-default" style="border: 3px solid;">Zur Downloadseite</button></a>
             </div>
         </div>
     </div>
+    <script>
+        var radio = $("input[name='sort']:checked").val();
+        var text = $('#searchtext')[0].value;
+        document.cookie = "radio='+''+'; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+    </script>
 </body>
 
 </html>
