@@ -2,13 +2,13 @@
 <html>
 
 <head>
-    <title>Social Paka-Suche</title>
+    <meta charset="utf-8">
+    <title>Social Paka - Suche</title>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/basic.css" />
-    <meta charset="utf-8">
     <link rel="icon" href="img/logo.png" type="image/png" class="img-thumbnail">
     <script>
         function loaduser() {
@@ -42,14 +42,14 @@
                 <div class="col-md-8">
                     <form class="navbar-form" id="suchen" onsubmit="loaduser();return false;">
                         <input type="radio" name="sort" class="search-search" />
-                        <label>Skills</label>
-                        <input type="radio" name="sort" class="search-search" />
                         <label>Name</label>
+                        <input type="radio" name="sort" class="search-search" />
+                        <label>Skills</label>
                         <input type="text" id="searchtext" class="form-control search search-search" />
                         <input type="submit" class="btn btn-primary search" value="Suchen" />
                     </form>
                 </div>
-                <button type="button" class="btn btn-default" onclick="window.location.href='./index.html'">Zurück zur Startseite</button>
+                <a href="index.html"><button type="button" class="btn btn-default">Zurück zur Startseite</button></a>
             </div>
         </div>
         <div class="row">
