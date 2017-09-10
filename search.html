@@ -13,9 +13,17 @@
     <script>
         function loaduser() {
 
+
+            var radio = $("input[name='sort']:checked").val();
+            var text = $('#searchtext')[0].value;
+            console.log(radio)
+            console.log(text)
+            document.cookie = "radio=" + radio + "; expires=Thu, 24 Dec 2018 12:00:00 UTC; path=/";
+            document.cookie = "search=" + text + "; expires=Thu, 24 Dec 2018 12:00:00 UTC; path=/";
             var name = $('#searchtext')[0].value;
-            var url = "http://10.172.14.70:9253/user?name=" + name
-            console.log(url)
+            var url = "http://192.168.0.100:9253/user?name=" + name;
+            console.log(url);
+
 
             $.ajax({
                 url: url
@@ -41,9 +49,9 @@
             <div class="col-md-10" style="height: 100%; background-color: #999999;">
                 <div class="col-md-8">
                     <form class="navbar-form" id="suchen" onsubmit="loaduser();return false;">
-                        <input type="radio" name="sort" class="search-search" />
+                        <input type="radio" name="sort" class="search-search" id="name"/>
                         <label>Name</label>
-                        <input type="radio" name="sort" class="search-search" />
+                        <input type="radio" name="sort" class="search-search" id="skills"/>
                         <label>Skills</label>
                         <input type="text" id="searchtext" class="form-control search search-search" />
                         <input type="submit" class="btn btn-primary search" value="Suchen" />
@@ -60,6 +68,28 @@
             </div>
         </div>
     </div>
+    <script>
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        };
+
+        var id = getCookie('radio');
+        $("#" + id).prop( "checked", true );
+        $("#searchtext").val(getCookie('search'));
+        loaduser()
+    </script>
 </body>
 
 </html>

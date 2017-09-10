@@ -24,10 +24,10 @@
             <div class="col-md-10 middle">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <form class="form-group" action="search.html">
+                    <form class="form-group" onsubmit="setCookie();return false;">
                         <h2>Suche Person</h2>
-                        <input type="radio" name="sort" value="name"/><label>Name</label>
-                        <input type="radio" name="sort" value="skills"/><label>Skills</label>
+                        <input type="radio" name="sort" value="name" /><label>Name</label>
+                        <input type="radio" name="sort" value="skills" /><label>Skills</label>
                         <br />
                         <input id="searchtext" type="text" name="a" class="form-control">
                         <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Suchen</button>
@@ -37,9 +37,15 @@
         </div>
     </div>
     <script>
-        var radio = $("input[name='sort']:checked").val();
-        var text = $('#searchtext')[0].value;
-        document.cookie = "radio='+''+'; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+        function setCookie() {
+            var radio = $("input[name='sort']:checked").val();
+            var text = $('#searchtext')[0].value;
+            console.log(radio)
+            console.log(text)
+            document.cookie = "radio=" + radio + "; expires=Thu, 24 Dec 2018 12:00:00 UTC; path=/";
+            document.cookie = "search=" + text + "; expires=Thu, 24 Dec 2018 12:00:00 UTC; path=/";
+            window.location.replace('search.html');
+        };
     </script>
 </body>
 
