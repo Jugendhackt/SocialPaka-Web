@@ -40,8 +40,7 @@
         function setCookie() {
             var radio = $("input[name='sort']:checked").val();
             var text = $('#searchtext')[0].value;
-            console.log(radio)
-            console.log(text)
+            
             document.cookie = "radio=" + radio + "; expires=Thu, 24 Dec 2018 12:00:00 UTC; path=/";
             document.cookie = "search=" + text + "; expires=Thu, 24 Dec 2018 12:00:00 UTC; path=/";
             window.location.replace('search.html');

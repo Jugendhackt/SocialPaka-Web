@@ -12,24 +12,22 @@
     <link rel="icon" href="img/logo.png" type="image/png" class="img-thumbnail">
     <script>
         function loaduser() {
-
-
             var radio = $("input[name='sort']:checked").val();
             var text = $('#searchtext')[0].value;
-            console.log(radio)
-            console.log(text)
             document.cookie = "radio=" + radio + "; expires=Thu, 24 Dec 2018 12:00:00 UTC; path=/";
             document.cookie = "search=" + text + "; expires=Thu, 24 Dec 2018 12:00:00 UTC; path=/";
             var name = $('#searchtext')[0].value;
-            var url = "http://192.168.0.100:9253/user?name=" + name;
-            console.log(url);
-
+            if (radio == 'name') {
+                var url = "http://192.168.0.100:9253/user?name=" + name;
+            } else if(radio='skills'){
+                var url = "http://192.168.0.100:9253/user/skill/search?skill=" + name;
+            };
 
             $.ajax({
                 url: url
             })
                 .done(function (data) {
-                    var newdiv = '<div class="Eintrag"><img src="img/standartavatar.png" style="float: right; height: 3.5em; margin-bottom: 5px;"><b style="color: red;">' + data.fullName + '</b><br>Skills: alles </div>'
+                    var newdiv = '<div class="Eintrag"><img src="img/standartavatar.png" style="float: right; height: 3.5em; margin-bottom: 5px;"><b style="color: red;">' + data.fullName + '</b><br>Skills: ' + data.skills.toString() + ' </div>'
                     $(newdiv).appendTo('#add');
                 });
         };
@@ -49,9 +47,9 @@
             <div class="col-md-10" style="height: 100%; background-color: #999999;">
                 <div class="col-md-8">
                     <form class="navbar-form" id="suchen" onsubmit="loaduser();return false;">
-                        <input type="radio" name="sort" class="search-search" id="name"/>
+                        <input type="radio" name="sort" class="search-search" value="name" id="name"/>
                         <label>Name</label>
-                        <input type="radio" name="sort" class="search-search" id="skills"/>
+                        <input type="radio" name="sort" class="search-search" value="skills" id="skills"/>
                         <label>Skills</label>
                         <input type="text" id="searchtext" class="form-control search search-search" />
                         <input type="submit" class="btn btn-primary search" value="Suchen" />

@@ -30,6 +30,9 @@
                 </div>
                 <div class="col-md-5" style="margin-left: 10px; left: 2.3em;">
                     <div class="row infocontent" id="add"></div>
+                    <div class="row infocontent">
+                        <ul id="addskills"></ul>
+                    </div>
                     <button class="btn btn-primary" onclick="vCard()" href="js/demo." id="export">Export vCard</button>
                 </div><a href="index.html"><button type="button" class="btn btn-default">Zurück zur Startseite</button></a>
             </div>
@@ -47,6 +50,12 @@
                     bday = y[1] + '.' + y[0] + '.' + y[2];
                     var newdiv = '<h1>' + data.fullName + '</h1><ul id=\"add\"><li><span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span> Email: <a href=\"mailto:info@example.com\">' + data.email + '</a><input type=\"email\" class=\"editfield\" /></li><li><span class=\"glyphicon glyphicon-earphone\" aria-hidden=\"true\"></span> Telefonnummer: <a href=\"tel:004917412345678\">' + data.phone + '</a><input type=\"tel\" class=\"editfield\" /></li><li><span class=\"glyphicon glyphicon-gift\" aria-hidden=\"true\"></span> Geburtstag: ' + bday + '<input type=\"bday\" class=\"editfield\" /></li><li><img src=\"img/entegigant.png\" style=\"width: 30px; cursor: pointer;\" id=\"edit\" /><img src=\"img/entegigant.png\" style=\"width: 30px; cursor: pointer;\" id=\"exitedit\" /></li></ul>';
                     $(newdiv).appendTo('#add');
+                    skills = data.skills;
+                    console.log(skills)
+                    for (let i of skills) {
+                        console.log(i)
+                        $('<li>' + i + '</li>').appendTo('#addskills');
+                    };
                 });
             setTimeout(function () {
                 $('#edit').click(function () {
@@ -63,7 +72,7 @@
         </script>
 
 
-        <script type="text/javascript">
+        <script>
             var myLink = document.getElementById('mylink');
 
             myLink.onclick = function () {
@@ -81,7 +90,7 @@
 
             var vCard = require('vcards-js');
 
-            var name = 'demo'
+            var name = 'demo';
 
             //create a new vCard
             vCard = vCard();
