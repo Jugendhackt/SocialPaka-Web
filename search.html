@@ -9,8 +9,9 @@
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/basic.css" />
+    <link rel="stylesheet" href="css/search.css" />
     <link rel="icon" href="img/logo.png" type="image/png" class="img-thumbnail">
-    <script>
+    <script src="js/search.js">
         function loaduser() {
             var radio = $("input[name='sort']:checked").val();
             var text = $('#searchtext')[0].value;
@@ -19,7 +20,7 @@
             var name = $('#searchtext')[0].value;
             if (radio == 'name') {
                 var url = "http://192.168.0.100:9253/user?name=" + name;
-            } else if(radio='skills'){
+            } else if (radio = 'skills') {
                 var url = "http://192.168.0.100:9253/user/skill/search?skill=" + name;
             };
 
@@ -47,9 +48,9 @@
             <div class="col-md-10" style="height: 100%; background-color: #999999;">
                 <div class="col-md-8">
                     <form class="navbar-form" id="suchen" onsubmit="loaduser();return false;">
-                        <input type="radio" name="sort" class="search-search" value="name" id="name"/>
+                        <input type="radio" name="sort" class="search-search" value="name" id="name" />
                         <label>Name</label>
-                        <input type="radio" name="sort" class="search-search" value="skills" id="skills"/>
+                        <input type="radio" name="sort" class="search-search" value="skills" id="skills" />
                         <label>Skills</label>
                         <input type="text" id="searchtext" class="form-control search search-search" />
                         <input type="submit" class="btn btn-primary search" value="Suchen" />
@@ -60,9 +61,28 @@
         </div>
         <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-10 middle">
+            <div class="col-md-10 middle" style="padding-bottom: 15px;">
                 <h1>Suchergebnisse</h1>
-                <div id="add" style="margin: 0; padding: 0;"></div>
+                <div id="add" class="container" style="height: 100%; width: 100%;">
+                    <div class="row searchentry">
+                        <div class="col-md-1 profilpic">
+                            <img src="img/standartavatar.png" />
+                        </div>
+                        <div class="col-md-11">
+                            <b style="color: red;">Max Mustermann</b><br>
+                            <p>Skills: eatingpizza</p>
+                        </div>
+                    </div>
+                    <div class="row searchentry">
+                        <div class="col-md-1 profilpic">
+                            <img src="img/standartavatar.png" />
+                        </div>
+                        <div class="col-md-11">
+                            <b style="color: red;">Max Mustermann</b><br>
+                            <p>Skills: eatingpizza</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -71,7 +91,7 @@
             var name = cname + "=";
             var decodedCookie = decodeURIComponent(document.cookie);
             var ca = decodedCookie.split(';');
-            for(var i = 0; i <ca.length; i++) {
+            for (var i = 0; i < ca.length; i++) {
                 var c = ca[i];
                 while (c.charAt(0) == ' ') {
                     c = c.substring(1);
@@ -84,7 +104,7 @@
         };
 
         var id = getCookie('radio');
-        $("#" + id).prop( "checked", true );
+        $("#" + id).prop("checked", true);
         $("#searchtext").val(getCookie('search'));
         loaduser()
     </script>

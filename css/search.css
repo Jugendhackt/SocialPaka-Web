@@ -1,0 +1,9 @@
+.searchentry {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.searchentry * {
+    height: 100%;
+    max-width: 100%;
+}
