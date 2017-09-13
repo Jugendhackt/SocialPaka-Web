@@ -10,22 +10,23 @@
     <link rel="stylesheet" href="css/profil.css" />
     <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet" />
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/vCard.js"></script>
+    <script src="js/profil.js"></script>
+    <!--<script src="js/vCard.js"></script>-->
 </head>
 
-<body style="background-image: url(img/background.jpg)">
-    <div class="container" style="width: 100%; height: 100%;">
+<body>
+    <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-10" style="height: 216px; padding: 0; height: 100%;">
-                <img src="img/banner.png" style="width: 100%;" />
+            <div class="col-md-10" id="banner">
+                <img src="img/banner.png" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10 middle">
                 <div class="col-md-1"></div>
-                <div class="col-md-2" style="border: 7px solid #999999; top: -2.9em; padding: 0; background-color: #FFFFFF; left: 2.3em;">
+                <div class="col-md-2" id="profilpic">
                     <img src="img/standartavatar.png" style="width: 100%;" />
                 </div>
                 <div class="col-md-5" style="margin-left: 10px; left: 2.3em;">
@@ -37,88 +38,92 @@
                 </div><a href="index.html"><button type="button" class="btn btn-default">Zurück zur Startseite</button></a>
             </div>
         </div>
-        <script>
-            var name = 'tobias';
-            var url = "http://192.168.0.100:9253/user?name=" + name
+    </div>
+    <script>
+        var name = 'tobias';
+        var editimg = 'img/entegigant.png';
+        var url = "http://192.168.0.100:9253/user?name=" + name
 
-            $.ajax({
-                url: url
-            })
-                .done(function (data) {
-                    var xdate = data.bday
-                    var y = xdate.split('/');
-                    bday = y[1] + '.' + y[0] + '.' + y[2];
-                    var newdiv = '<h1>' + data.fullName + '</h1><ul id=\"add\"><li><span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span> Email: <a href=\"mailto:info@example.com\">' + data.email + '</a><input type=\"email\" class=\"editfield\" /></li><li><span class=\"glyphicon glyphicon-earphone\" aria-hidden=\"true\"></span> Telefonnummer: <a href=\"tel:004917412345678\">' + data.phone + '</a><input type=\"tel\" class=\"editfield\" /></li><li><span class=\"glyphicon glyphicon-gift\" aria-hidden=\"true\"></span> Geburtstag: ' + bday + '<input type=\"bday\" class=\"editfield\" /></li><li><img src=\"img/entegigant.png\" style=\"width: 30px; cursor: pointer;\" id=\"edit\" /><img src=\"img/entegigant.png\" style=\"width: 30px; cursor: pointer;\" id=\"exitedit\" /></li></ul>';
-                    $(newdiv).appendTo('#add');
-                    skills = data.skills;
-                    console.log(skills)
-                    for (let i of skills) {
-                        console.log(i)
-                        $('<li>' + i + '</li>').appendTo('#addskills');
-                    };
-                });
-            setTimeout(function () {
-                $('#edit').click(function () {
-                    $('.editfield').show();
-                    $('#edit').hide();
-                    $('#exitedit').show();
-                });
-                $('#exitedit').click(function () {
-                    $('.editfield').hide();
-                    $('#edit').show();
-                    $('#exitedit').hide();
-                });
-            }, 1000);
-        </script>
-
-
-        <script>
-            var myLink = document.getElementById('mylink');
-
-            myLink.onclick = function () {
-
-                var script = document.createElement("script");
-                script.type = "text/javascript";
-                script.src = "Public/Scripts/filename.js.";
-                document.getElementsByTagName("head")[0].appendChild(script);
-                return false;
-
-            }
-        </script>
-        <script>
-            var requestify = require('requestify');
-
-            var vCard = require('vcards-js');
-
-            var name = 'demo';
-
-            //create a new vCard
-            vCard = vCard();
-
-            requestify.get('http://10.172.3.201:9253/user?name=demo')
-                .then(function (response) {
-                    console.log(response.getCode()); // Some code between 200-299
-                })
-                .fail(function (response) {
-                    console.log(response.getCode()); // Some error code such as, for example, 404
-                });
-
-            requestify.get('http://10.172.3.201:9253/user?name=demo').then(function (response) {
-                // Get the response body
-                var Body = response.getBody();
-                vCard.firstName = Body.fullName.substring(0, Body.fullName.lastIndexOf(" "));
-                vCard.lastName = Body.fullName.substring(Body.fullName.lastIndexOf(" ") + 1, Body.fullName.length);
-                //vcardbd = Body.bdy;
-                //vCard.birthday = new Date (vcardbd.replace("/", "-"));        
-                vCard.email = Body.email;
-                vCard.workPhone = Body.phone;
-                //save to file
-                vCard.saveToFile('demo.vcf');
-
-                //get as formatted string
-                console.log(vCard.getFormattedString());
+        $.ajax({
+            url: url
+        })
+            .done(function (data) {
+                var xdate = data.bday
+                var y = xdate.split('/');
+                bday = y[1] + '.' + y[0] + '.' + y[2];
+                var newdiv = '<h1>' + data.fullName + '</h1><ul id=\"add\"><li><span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span> Email: <a href=\"mailto:' + data.email + '\">' + data.email + '</a><input type=\"email\" class=\"editfield\" /></li><li><span class=\"glyphicon glyphicon-earphone\" aria-hidden=\"true\"></span> Telefonnummer: <a href=\"tel:' + data.phone + '\">' + data.phone + '</a><input type=\"tel\" class=\"editfield\" /></li><li><span class=\"glyphicon glyphicon-gift\" aria-hidden=\"true\"></span> Geburtstag: ' + bday + '<input type=\"bday\" class=\"editfield\" /></li><li><img src=\"' + editimg + '\" class=\"editicon\" id=\"edit\" /><img src=\"' + editimg + '\" class=\"editicon\" id=\"exitedit\" /></li></ul>';
+                $(newdiv).appendTo('#add');
+                skills = data.skills;
+                for (let i of skills) {
+                    $('<li>' + i + '</li>').appendTo('#addskills');
+                };
             });
-        </script>
+        setTimeout(function () {
+            $('#edit').click(function () {
+                $('.editfield').show();
+                $('#edit').hide();
+                $('#exitedit').show();
+            });
+            $('#exitedit').click(function () {
+                $('.editfield').hide();
+                $('#edit').show();
+                $('#exitedit').hide();
+            });
+        }, 1000);
+    </script>
+
+
+    <!-- <script>
+        var myLink = document.getElementById('mylink');
+
+        myLink.onclick = function () {
+
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "Public/Scripts/filename.js.";
+            document.getElementsByTagName("head")[0].appendChild(script);
+            return false;
+
+        }
+    </script>
+    <script>
+        var requestify = require('requestify');
+
+        var vCard = require('vcards-js');
+
+        var name = 'demo';
+
+        //create a new vCard
+        vCard = vCard();
+
+        requestify.get('http://10.172.3.201:9253/user?name=demo')
+            .then(function (response) {
+                console.log(response.getCode()); // Some code between 200-299
+            })
+            .fail(function (response) {
+                console.log(response.getCode()); // Some error code such as, for example, 404
+            });
+
+        requestify.get('http://10.172.3.201:9253/user?name=demo').then(function (response) {
+            // Get the response body
+            var Body = response.getBody();
+            vCard.firstName = Body.fullName.substring(0, Body.fullName.lastIndexOf(" "));
+            vCard.lastName = Body.fullName.substring(Body.fullName.lastIndexOf(" ") + 1, Body.fullName.length);
+            //vcardbd = Body.bdy;
+            //vCard.birthday = new Date (vcardbd.replace("/", "-"));        
+            vCard.email = Body.email;
+            vCard.workPhone = Body.phone;
+            //save to file
+            vCard.saveToFile('demo.vcf');
+
+            //get as formatted string
+            console.log(vCard.getFormattedString());
+        });
+    </script>-->
+    <script>
+        loadUser();
+        editbutton()
+    </script>
 </body>
 
 </html>

@@ -5,47 +5,26 @@
     <meta charset="utf-8">
     <title>Social Paka - Suche</title>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/basic.css" />
     <link rel="stylesheet" href="css/search.css" />
     <link rel="icon" href="img/logo.png" type="image/png" class="img-thumbnail">
-    <script src="js/search.js">
-        function loaduser() {
-            var radio = $("input[name='sort']:checked").val();
-            var text = $('#searchtext')[0].value;
-            document.cookie = "radio=" + radio + "; expires=Thu, 24 Dec 2018 12:00:00 UTC; path=/";
-            document.cookie = "search=" + text + "; expires=Thu, 24 Dec 2018 12:00:00 UTC; path=/";
-            var name = $('#searchtext')[0].value;
-            if (radio == 'name') {
-                var url = "http://192.168.0.100:9253/user?name=" + name;
-            } else if (radio = 'skills') {
-                var url = "http://192.168.0.100:9253/user/skill/search?skill=" + name;
-            };
-
-            $.ajax({
-                url: url
-            })
-                .done(function (data) {
-                    var newdiv = '<div class="Eintrag"><img src="img/standartavatar.png" style="float: right; height: 3.5em; margin-bottom: 5px;"><b style="color: red;">' + data.fullName + '</b><br>Skills: ' + data.skills.toString() + ' </div>'
-                    $(newdiv).appendTo('#add');
-                });
-        };
-    </script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="js/search.js"></script>
 </head>
 
-<body style="background-image: url(img/background.jpg)">
-    <div class="container" style="width: 100%;">
+<body>
+    <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-10" style="height: 100%; padding: 0;">
-                <img src="img/banner.png" style="width: 100%;" />
+            <div class="col-md-10" id="banner">
+                <img src="img/banner.png" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-10" style="height: 100%; background-color: #999999;">
+            <div class="col-md-10" style="background-color: #999999;">
                 <div class="col-md-8">
                     <form class="navbar-form" id="suchen" onsubmit="loaduser();return false;">
                         <input type="radio" name="sort" class="search-search" value="name" id="name" />
@@ -63,7 +42,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-10 middle" style="padding-bottom: 15px;">
                 <h1>Suchergebnisse</h1>
-                <div id="add" class="container" style="height: 100%; width: 100%;">
+                <div id="add" class="container">
                     <div class="row searchentry">
                         <div class="col-md-1 profilpic">
                             <img src="img/standartavatar.png" />
@@ -87,22 +66,6 @@
         </div>
     </div>
     <script>
-        function getCookie(cname) {
-            var name = cname + "=";
-            var decodedCookie = decodeURIComponent(document.cookie);
-            var ca = decodedCookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        };
-
         var id = getCookie('radio');
         $("#" + id).prop("checked", true);
         $("#searchtext").val(getCookie('search'));

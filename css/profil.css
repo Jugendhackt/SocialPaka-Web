@@ -6,6 +6,14 @@ h1{
     font-weight: 700;
 }
 
+#profilpic{
+    border: 7px solid #999999;
+    top: -2.9em;
+    padding: 0;
+    background-color: #FFFFFF;
+    left: 2.3em;
+}
+
 ul{
     list-style-type: None;
 }
@@ -27,3 +35,9 @@ ul{
 #export{
     margin-bottom: 10px;
 }
+
+.editicon{
+    width: 30px; 
+    cursor: pointer;
+}
+
