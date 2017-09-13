@@ -16,7 +16,7 @@ function loaduser() {
         .done(function (data) {
             var newdiv = '<div class=\"row searchentry\">' +
                 '<div class=\"col-md-1 profilpic\">' +
-                '<img src=\"img/standartavatar.png\" />' +
+                '<img src=\"img/standartavatar.png\" alt=\"Avatar\" />' +
                 '</div>' +
                 '<div class=\"col-md-11\">' +
                 '<b style=\"color: red;\">' + data.fullName + '</b><br>' +
