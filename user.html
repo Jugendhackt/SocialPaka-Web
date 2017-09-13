@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <title>Social Paka - Profil</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png">
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="css/basic.css" />
     <link rel="stylesheet" href="css/profil.css" />
-    <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/profil.js"></script>
     <!--<script src="js/vCard.js"></script>-->
@@ -39,39 +39,6 @@
             </div>
         </div>
     </div>
-    <script>
-        var name = 'tobias';
-        var editimg = 'img/entegigant.png';
-        var url = "http://192.168.0.100:9253/user?name=" + name
-
-        $.ajax({
-            url: url
-        })
-            .done(function (data) {
-                var xdate = data.bday
-                var y = xdate.split('/');
-                bday = y[1] + '.' + y[0] + '.' + y[2];
-                var newdiv = '<h1>' + data.fullName + '</h1><ul id=\"add\"><li><span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span> Email: <a href=\"mailto:' + data.email + '\">' + data.email + '</a><input type=\"email\" class=\"editfield\" /></li><li><span class=\"glyphicon glyphicon-earphone\" aria-hidden=\"true\"></span> Telefonnummer: <a href=\"tel:' + data.phone + '\">' + data.phone + '</a><input type=\"tel\" class=\"editfield\" /></li><li><span class=\"glyphicon glyphicon-gift\" aria-hidden=\"true\"></span> Geburtstag: ' + bday + '<input type=\"bday\" class=\"editfield\" /></li><li><img src=\"' + editimg + '\" class=\"editicon\" id=\"edit\" /><img src=\"' + editimg + '\" class=\"editicon\" id=\"exitedit\" /></li></ul>';
-                $(newdiv).appendTo('#add');
-                skills = data.skills;
-                for (let i of skills) {
-                    $('<li>' + i + '</li>').appendTo('#addskills');
-                };
-            });
-        setTimeout(function () {
-            $('#edit').click(function () {
-                $('.editfield').show();
-                $('#edit').hide();
-                $('#exitedit').show();
-            });
-            $('#exitedit').click(function () {
-                $('.editfield').hide();
-                $('#edit').show();
-                $('#exitedit').hide();
-            });
-        }, 1000);
-    </script>
-
 
     <!-- <script>
         var myLink = document.getElementById('mylink');
