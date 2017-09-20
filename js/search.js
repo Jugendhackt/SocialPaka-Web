@@ -14,15 +14,17 @@ function loaduser() {
         url: url
     })
         .done(function (data) {
-            var newdiv = '<div class=\"row searchentry\">' +
-                '<div class=\"col-md-1 profilpic\">' +
-                '<img src=\"img/standartavatar.png\" alt=\"Avatar\" />' +
+
+
+            var newdiv = '<div class="row searchentry">' +
+                '<div class="col-md-1 profilpic">' +
+                    '<img src="img/standartavatar.png" alt="avatar"/>' +
                 '</div>' +
-                '<div class=\"col-md-11\">' +
-                '<b style=\"color: red;\">' + data.fullName + '</b><br>' +
-                '<p>Skills: ' + data.skills.toString() + '</p>' +
+                '<div class="col-md-11">' +
+                    '<b style="color: red;">' + data.fullName + '</b><br />' +
+                    '<p>Skills: ' + data.skills.toString() + '</p>' +
                 '</div>' +
-                '</div>';
+            '</div>';
 
             $(newdiv).appendTo('#add');
         });
