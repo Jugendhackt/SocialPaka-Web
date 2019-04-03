@@ -16,4 +16,4 @@ Entwickler sind unter [contributors](https://github.com/Jugendhackt/SocialPaka-W
 
 ## Lizenz
 
-Das Projekt ist lizensiert unter der MIT Lizenz - mehr Details befinden sich in der [LICENSE](LICENSE)-Datei.
+Das Projekt ist lizensiert unter der MIT Lizenz - mehr Details finden Sie [hier](LICENSE)!
